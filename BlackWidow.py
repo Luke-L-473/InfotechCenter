@@ -1,34 +1,8 @@
-import random
-from time import sleep
-
-print("\n*********************************\n")
-print("Weather Branch - Developer: Luke Lenzinger")
-
-# Weather function to determine weather
-def weather():
-    return random.choice(["snowy", "blizzard", "icy", "rainy", "windy", "sunny"])
-
-# Optimized Vehicle Response System
-def vehicle_response_system(weather_condition):
-    weather_data = {
-        "snowy": (30, 45),
-        "blizzard": (60, 35),
-        "icy": (60, 45),
-        "rainy": (15, 55),
-        "windy": (10, 60),
-        "sunny": (0, 70)
-    }
-
-    delay, speed_limit = weather_data.get(weather_condition, (0, 70))
-
-    if delay:
-        print(f"\nThe National Weather Service has updated your alarm by {delay} minutes due to {weather_condition} conditions.")
-    else:
-        print(f"\nThe National Weather Service is calling for {weather_condition} skies outside. Drive safe!")
-
-    sleep(1)
-    print(f"VRS has been engaged, allowing a maximum speed of {speed_limit} MPH.")
-
-# Run the system
-current_weather = weather()
-vehicle_response_system(current_weather)
+import random, time
+print("\n*********************************\nWeather Branch - Developer: Luke Lenzinger")
+def vehicle_response_system(w):
+    d, s = {"snowy": (30, 45), "blizzard": (60, 35), "icy": (60, 45), "rainy": (15, 55), "windy": (10, 60)}.get(w, (0, 70))
+    print(f"\nThe National Weather Service {'updated your alarm by ' + str(d) + ' minutes due to ' + w if d else 'calls for ' + w + ' skies outside. Drive safe!'}")
+    time.sleep(1)
+    print(f"VRS engaged, max speed {s} MPH.")
+vehicle_response_system(random.choice(["snowy", "blizzard", "icy", "rainy", "windy", "sunny"]))
