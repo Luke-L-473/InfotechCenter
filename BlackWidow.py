@@ -1,6 +1,7 @@
 # Import necessary libraries
 import sys  # Used for controlling output display
 import time  # Used for adding delays
+import random, time
 
 # Define ANSI color codes
 RED = "\033[91m"
@@ -41,9 +42,9 @@ while x != 20:
     
     # After 20 iterations, display the final message in green
     if x == 20:
-        print(GREEN + "\nOperating System Booted Up - Retina Scanned - Access Granted" + RESET)
+        print(GREEN + "Operating System Booted Up - Retina Scanned - Access Granted" + RESET)
 
-import random, time
+
 print("\n*********************************\n\nWeather Branch - Developer: Luke Lenzinger")
 def vehicle_response_system(w):
     d, s = {"snowy": (30, 45), "blizzard": (60, 35), "icy": (60, 45), "rainy": (15, 55), "windy": (10, 60)}.get(w, (0, 70))
