@@ -42,7 +42,7 @@ while x != 20:
     
     # After 20 iterations, display the final message in green
     if x == 20:
-        print(GREEN + "Operating System Booted Up - Retina Scanned - Access Granted" + RESET)
+        print(GREEN + "\n\nOperating System Booted Up - Retina Scanned - Access Granted" + RESET)
 
 
 print("\n*********************************\n\nWeather Branch - Developer: Luke Lenzinger")
