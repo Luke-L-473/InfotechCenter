@@ -12,5 +12,21 @@ def gasStations():
     gasStationsList = ["Shell", "Marathon", "Speedway", "Circle K", "7/11", "Sam's Club", "Buc-ee's"]
     return random.choice(gasStationsList)
 
-print(gasLevelGauge())
-print(gasStations())
+def gasLevelAlert():
+    milesToGasStationLow = round(random.uniform(1,25),1)
+    milesToGasStationQuarterTank = round(random.uniform(25.1,50),1)
+    gasLevelIndicator = gasLevelGauge()
+    if gasLevelIndicator == "Empty":
+        print("****WARNING - YOU ARE OUT OF GAS****\n")
+        sleep(1.25)
+        print("Calling AAA")
+    elif gasLevelIndicator == "Low":
+        print("Your gas tank is extremely low, checking GPS for the closest gas station")
+        sleep(1.25)
+        print("The cosest gas station is", gasStations(), "which is", milesToGasStationLow, "miles away.")
+    elif gasLevelIndicator == "Quarter Tank":
+        print("Your gas tank is a Quarter Tank full, checking GPS for the closest gas station")
+        sleep(1.25)
+        print("The cosest gas station is", gasStations(), "which is", milesToGasStationQuarterTank, "miles away.")
+        
+gasLevelAlert()        
